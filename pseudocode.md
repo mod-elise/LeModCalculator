@@ -1,72 +1,64 @@
-listOfValidOperators ['*', '/']
 
-FUNCTION multiply(x, y)
+
+```python
+FUNCTION Multiply(x, y)
     RETURN x * y
 END FUNCTION
 
-
-FUNCTION addition(x, y)
+FUNCTION Add(x, y)
     RETURN x + y
 END FUNCTION
 
-
-FUNCTION subtraction(x, y)
+FUNCTION Subtract(x, y)
     RETURN x - y
 END FUNCTION
 
+FUNCTION Divide(x, y)
+    IF y = 0 THEN
+        OUTPUT "Error: Cannot divide by zero"
+    ELSE
+        RETURN x / y
+    END IF
+END FUNCTION
 
-FUNCTION percent(x)
+FUNCTION Percent(x)
     RETURN x / 100
 END FUNCTION
 
-
-FUNCTION square(x)
+FUNCTION Square(x)
     RETURN x * x
 END FUNCTION
 
-
-FUNCTION squareRoot(x)
+FUNCTION SquareRoot(x)
     IF x < 0 THEN
-        OUTPUT "Error"
+        OUTPUT "Error: Invalid input"
     ELSE
         RETURN √x
     END IF
 END FUNCTION
 
-
-FUNCTION sin(x)
+FUNCTION Sin(x)
     RETURN sine(x)
 END FUNCTION
 
-
-FUNCTION cos(x)
+FUNCTION Cos(x)
     RETURN cosine(x)
 END FUNCTION
 
-
-FUNCTION tan(x)
+FUNCTION Tan(x)
     RETURN tangent(x)
 END FUNCTION
 
-
-FUNCTION factorial(x)
-    def factorial(n):
-    if n == 1 or n == 0:
-        return 1
-    else:
-        return n * factorial(n - 1)
+FUNCTION Factorial(x)
+    IF x < 0 THEN
+        OUTPUT "Error: Invalid input"
+    ELSE IF x = 0 OR x = 1 THEN
+        RETURN 1
+    ELSE
+        RETURN x * Factorial(x - 1)
+    END IF
 END FUNCTION
-
-
-function evaluator (string)
-	lookInString:
-		if countNumberOfValidOperators not 1:
-			error
-		else:		
-			splitNumbersAndOperator:
-				return numbers, operator
-
-function validate (numbers, operator)
+```
 
 	if operator == '*' and thereAreTwoNumbers:
 		return True, numbers, operator
