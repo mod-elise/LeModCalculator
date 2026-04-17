@@ -3,7 +3,7 @@ import tkinter.font as tkfont
 import math
 import math
 
-def Multiply(x, y):
+def multiply(x, y):
     result = x * y
     return result
 
@@ -67,7 +67,7 @@ def calculate(inputString):
     else:
         match operator:
             case '*':
-                return Multiply(operands[0],operands[1])
+                return multiply(operands[0],operands[1])
             case '+':
                 return add(operands[0], operands[1])
             case '-':
