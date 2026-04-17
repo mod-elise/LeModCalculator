@@ -49,6 +49,15 @@ def cos(x):
 def tan(x):
     return math.tan(x)
 
+def sin(x):
+    return math.sin(x)
+
+def cos(x):
+    return math.cos(x)
+
+def tan(x):
+    return math.tan(x)
+
 def validator (numbers, operators):
     validOperators = ['*', '/', '+', '-', '%', 'x²', '√', '!', 'sin', 'cos', 'tan']
     err = False
@@ -83,18 +92,17 @@ def evaluator (calculation):
     processed = calculation.split(' ')
     processed = [x for x in processed if x.strip()]
     for item in processed:
-        # isnumeric is a problem because of decimals
-        if item.isnumeric():           
-            numbers.append(item)
-        else:
+        try:
+            numerical = float(item)
+            numbers.append(numerical)
+        except:
             operators.append(item)
 
     return numbers, operators
 
 def calculate(inputString):
     numbers, operators = evaluator(inputString)
-    numbers, operator, err = validator(numbers, operators)
-    operands = [float(x) for x in numbers]
+    operands, operator, err = validator(numbers, operators)
    
     if err:
         return "-- Error --"
