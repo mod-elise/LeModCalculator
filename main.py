@@ -16,9 +16,9 @@ def subtract(x, y):
 
 def divide(x, y):
     if y == 0:
-        return (0, False)
+        return (0, True)
     else:
-        return (x / y, True)
+        return (x / y, False)
 
 def percent(x):
     return x / 100
@@ -34,14 +34,14 @@ def square_root(x):
 
 def factorial(x):
     if x < 0:
-        return (0, False)
+        return (0, True)
     total = 1
     for i in range(1, int(x) + 1):
         total *= i
-    return (total, True)
+    return (total, False)
 
 def validator (numbers, operators):
-    validOperators = ['*', '/', '+', '-', '%', 'x²', '√' ,'sin', 'cos', 'tan']
+    validOperators = ['*', '/', '+', '-', '%', 'x²', '√', '!', 'sin', 'cos', 'tan']
     err = False
     operandValidation = {
         '*': 2,
@@ -63,6 +63,7 @@ def validator (numbers, operators):
         operator = operators[0]
     except:
         operator = '*'
+
     if operandValidation[operator] != len(numbers):
         err = True
     return numbers, operator, err
@@ -106,11 +107,19 @@ def calculate(inputString):
             case '%':
                 return percent(operands[0])
             case '!':
-                return factorial(operands[0])
+                result, err =  factorial(operands[0])
+                if err:
+                    return "-- Error --"
+                else:
+                    return result
             case 'x²':
                 return square(operands[0])
             case '√':
-                return square_root(operands[0])
+                result, err =  square_root(operands[0])
+                if err:
+                    return "-- Error --"
+                else:
+                    return result
             case 'sin':
                 return sin(operands[0])
             case 'cos':
