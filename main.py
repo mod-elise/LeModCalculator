@@ -75,12 +75,14 @@ def evaluator (calculation):
     numbers = []
     operators = []
     processed = calculation.split(' ')
+    processed = [x for x in processed if x.strip()]
     for item in processed:
         # isnumeric is a problem because of decimals
         if item.isnumeric():           
             numbers.append(item)
         else:
             operators.append(item)
+
     return numbers, operators
 
 def calculate(inputString):
@@ -112,7 +114,7 @@ def calculate(inputString):
             case 'x²':
                 return square(operands[0])
             case '√':
-                return squareRoot(operands[0])
+                return square_root(operands[0])
             case 'sin':
                 return sin(operands[0])
             case 'cos':
