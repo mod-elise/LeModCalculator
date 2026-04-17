@@ -3,23 +3,41 @@ import tkinter.font as tkfont
 import math
 import math
 
-def Multiply(x, y):
-    result = x * y
-    return result
+# ----------- CALCULATOR LOGIC ----------- #
 
+def multiply(x, y):
+    return x * y
 
 def add(x, y):
-    result = x + y
-    return result
-   
-
+    return x + y
 
 def subtract(x, y):
-    result = x - y
-    return result
+    return x - y
 
-def calculate(inputString):
-    return
+def divide(x, y):
+    if y == 0:
+        return (0, False)
+    else:
+        return (x / y, True)
+
+def percent(x):
+    return x / 100
+
+def square(x):
+    return x * x
+
+def square_root(x):
+    if x < 0:
+        return (0, False)
+    return (math.sqrt(x), True)
+
+def factorial(x):
+    if x < 0:
+        return (0, False)
+    total = 1
+    for i in range(1, int(x) + 1):
+        total *= i
+    return (total, True)
 
 
 #------------------- USER INTERFACE -----------------#
