@@ -8,10 +8,6 @@ def multiply(x, y):
     result = x * y
     return result
 
-
-def multiply(x, y):
-    return x * y
-
 def add(x, y):
     return x + y
 
@@ -32,8 +28,8 @@ def square(x):
 
 def square_root(x):
     if x < 0:
-        return (0, False)
-    return (math.sqrt(x), True)
+        return (0, True)
+    return (math.sqrt(x), False )
 
 
 def factorial(x):
