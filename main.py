@@ -1,6 +1,22 @@
 import tkinter as tk
 import tkinter.font as tkfont
 import math
+import math
+
+def Multiply(x, y):
+    result = x * y
+    return result
+
+
+def add(x, y):
+    result = x + y
+    return result
+   
+
+
+def subtract(x, y):
+    result = x - y
+    return result
 
 def calculate(inputString):
     return
