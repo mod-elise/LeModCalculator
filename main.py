@@ -1,22 +1,48 @@
 import tkinter as tk
 import tkinter.font as tkfont
 import math
-import math
 
+
+# ----------- CALCULATOR LOGIC ----------- #
 def multiply(x, y):
     result = x * y
     return result
 
 
-def add(x, y):
-    result = x + y
-    return result
-   
+def multiply(x, y):
+    return x * y
 
+def add(x, y):
+    return x + y
 
 def subtract(x, y):
-    result = x - y
-    return result
+    return x - y
+
+def divide(x, y):
+    if y == 0:
+        return (0, False)
+    else:
+        return (x / y, True)
+
+def percent(x):
+    return x / 100
+
+def square(x):
+    return x * x
+
+def square_root(x):
+    if x < 0:
+        return (0, False)
+    return (math.sqrt(x), True)
+
+
+def factorial(x):
+    if x < 0:
+        return (0, False)
+    total = 1
+    for i in range(1, int(x) + 1):
+        total *= i
+    return (total, True)
 
 def validator (numbers, operators):
     validOperators = ['*', '/', '+', '-', '%', 'x²', '√' ,'sin', 'cos', 'tan']
