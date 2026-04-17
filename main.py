@@ -1,7 +1,6 @@
 import tkinter as tk
 import tkinter.font as tkfont
 import math
-import math
 
 # ----------- CALCULATOR LOGIC ----------- #
 
