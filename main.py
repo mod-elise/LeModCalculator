@@ -147,14 +147,23 @@ def calculate(inputString):
 #------------------- USER INTERFACE -----------------#
 
 def press (value):
-    if value == 'C':
-        entry.delete(0, tk.END)
-    elif value == '=':
-        calculation = entry.get()
-        entry.delete(0, tk.END)
-        entry.insert(tk.END, calculate(calculation))
-    else:
-        entry.insert(tk.END, value)
+    match value:
+        case 'C':        
+            entry.delete(0, tk.END)
+        case '=':
+            calculation = entry.get()
+            entry.delete(0, tk.END)
+            entry.insert(tk.END, calculate(calculation))
+        case 'π':
+            entry.insert(tk.END, " 3.1416 ")
+        case 'τ':
+            entry.insert(tk.END, " 6.2832 ")
+        case '𝒆':
+            entry.insert(tk.END, " 2.7183 ")
+        case 'ϕ':
+            entry.insert(tk.END, " 1.618 ")
+        case _:
+            entry.insert(tk.END, value)
 
 buttons = [
     (' x² ',1,0),    (' √ ',1,1),    (' ! ',1,2),     ('C',1,3),
@@ -163,6 +172,7 @@ buttons = [
     ('4',4,0),      ('5',4,1),      ('6',4,2),        (' * ',4,3),
     ('1',5,0),      ('2',5,1),      ('3',5,2),        (' - ',5,3),
     ('0',6,0),      ('.',6,1),      ('=',6,2),        (' + ',6,3),
+    ('π',7,0),      ('𝒆',7,1),      ('τ',7,2),        ('ϕ',7,3),
 ]
 
 root = tk.Tk()
