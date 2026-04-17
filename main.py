@@ -49,15 +49,6 @@ def cos(x):
 def tan(x):
     return math.tan(x)
 
-def sin(x):
-    return math.sin(x)
-
-def cos(x):
-    return math.cos(x)
-
-def tan(x):
-    return math.tan(x)
-
 def validator (numbers, operators):
     validOperators = ['*', '/', '+', '-', '%', 'x²', '√', '!', 'sin', 'cos', 'tan']
     err = False
